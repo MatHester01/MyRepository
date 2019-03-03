@@ -1,12 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('') {
       steps {
-        catchError() {
-          sh 'echo "Hello"'
-        }
-
+        powershell(returnStdout: true, returnStatus: true, script: 'echo "Hello World', encoding: 'UTF-8')
       }
     }
   }
